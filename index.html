@@ -1,0 +1,520 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page description">
+    <meta name="author" content="Alex Chekavy">
+    <title>Lesson on unit economics for Product managers, Marketers and Founders</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<!--
+	<div class="textcontent">
+		<h1><span class="h1">Когортный анализ</span> для продакт-менеджеров и маркетологов</h1>
+	</div>
+	-->
+	<div class="textcontent">
+		<h1><span class="h1">Cohort analysis</span> for product managers and marketers</h1>
+	</div>
+<!--
+	<div class="textcontent">
+		<p>Урок для продакт-менеджеров и маркетологов, которые  работают с метриками LTV, User Retention, Revenue Retention, Conversion Rate; которые хотят начать или уже работают с финансами: P&L, Unit economics. Без понимания и использования когорт сложно вырасти до Senior позиции или CPO/CMO в компаниях с Data Driven подходом и ответственности у этих ролей за P&L.</p>
+	</div>
+	<div class="imgcontent">
+		<img src="MP4 to GIF lesson.gif" alt="Description of the image" />
+		<p>В уроке последовательно показываются методы создания когорт, взаимосвязь дат и периодов, формулы. Показаны настоящие сценарии оценки когртных метрик.
+		</p>
+	</div>
+	-->
+	<div class="textcontent">
+		<p>A lesson for product managers and marketers who work with LTV, User Retention, Revenue Retention, Conversion Rate, and who want to start working with or already work with finance: P&amp;L, unit economics. Without understanding and using cohorts, it is difficult to grow into a Senior position or CPO/CMO in data-driven companies where these roles are responsible for the P&amp;L.</p>
+	</div>
+	<div class="imgcontent">
+		<img src="MP4 to GIF lesson.gif" alt="Description of the image" />
+		<p>The lesson consistently demonstrates methods for building cohorts, the relationship between dates and periods, and the formulas. Real scenarios for evaluating cohort metrics are shown.
+		</p>
+	</div>
+
+	<!--
+	<div class="textcontent">
+		<h2>Чему научитесь</h2>
+		<p>Цель этого урока – научить вас правильно оценивать метрики, которые отражают действительность только путем расчета по когортам: LTV, Revenue Retention, User Retention, Customer Retention, Conversion Rate, ARPPU, AOV, APC.  В конкретный период, видеть, что с новыми пользвателями что-то пошло не так, понимать, какие гипотезы дали результат. Всего более 100 сценариев.
+			<br /><br />	
+			Дам рекомендации, как доносить эти идеи до стейкхолдеров.
+		</p>
+	</div>
+	<div class="imgcontent">
+		<img src="scenario1.png" alt="Description of the image" />
+		<p>Анализ когорт показывает, что начиная с апреля, что-то сломалось на третьем месяце цикла жизни всех последующих когорт. Возможно, сломались уведомления о продлении подписки.</p>
+	</div>
+	<div class="imgcontent">
+		<img src="scenario2.png" alt="Description of the image" />
+		<p>
+			Ищем период, когда Retention стабилизируется, когда остаются лояльные клиенты. Начиная с 6 месяца у январской когорты все последующие месяцы вовзращается примерно по 90% клиентов без резких изменений метрики.
+		</p>
+	</div>
+	<div class="textcontent">
+		<h2>Когортный анализ поможет избежать ошибок в управленческих решениях</h2>
+		<p>
+			Без когорт, легко неверно интерпретировать свои метрики и сделать ошибочные управленческие решения:<br />
+			- начать масштабировать рекламную кампанию, которая принесет убытки<br />
+			- оставить фичу, которая гробит метрики<br />
+			- пропустить сегмент, на котором стоит сфокусироваться.
+		</p>
+	</div>
+
+
+	<div class="textcontent">
+		<h2>Структура урока</h2>
+		<p>Это не типичная лекция, а объемный урок с теорией и практикой. Скорее даже мастер-класс или симулятор. Студенты слушают 9 видео и делают 12 практических заданий, где познают “сценарии, ошибки, метрики”.<br /><br />
+		3 часа теории разбиты на блоки по 20 минут. Учитесь когда удобно — прогресс сохраняется. Понятно, что 3 часа за один раз не осилить. Практику нужно проходить на desktop, там таблицы. Да и видео смотреть желательно тоже.</p>
+	</div>
+
+-->
+	<div class="textcontent">
+		<h2>What you will learn</h2>
+		<p>The goal of this lesson is to teach you how to correctly evaluate metrics that reflect reality only when calculated by cohorts: LTV, Revenue Retention, User Retention, Customer Retention, Conversion Rate, ARPPU, AOV, APC. For a specific period, you will be able to see that something has gone wrong with new users and understand which hypotheses delivered results. In total, there are more than 100 scenarios.
+			<br /><br />	
+			I will give recommendations on how to communicate these ideas to stakeholders.
+		</p>
+	</div>
+	<div class="imgcontent">
+		<img src="scenario1.png" alt="Description of the image" />
+		<p>Cohort analysis shows that starting from April, something broke in the third month of the life cycle of all subsequent cohorts. It is possible that renewal notifications for the subscription stopped working.</p>
+	</div>
+	<div class="imgcontent">
+		<img src="scenario2.png" alt="Description of the image" />
+		<p>
+			We look for the period when retention stabilizes, when only loyal customers remain. Starting from month 6 for the January cohort, approximately 90% of customers return in all subsequent months without sharp changes in the metric.
+		</p>
+	</div>
+	<div class="textcontent">
+		<h2>Cohort analysis helps avoid mistakes in management decisions</h2>
+		<p>
+			Without cohorts, it is easy to misinterpret your metrics and make wrong management decisions:<br />
+			- start scaling an ad campaign that will generate losses<br />
+			- keep a feature that kills your metrics<br />
+			- miss a segment you should focus on.
+		</p>
+	</div>
+
+
+	<div class="textcontent">
+		<h2>Lesson structure</h2>
+		<p>This is not a typical lecture but a substantial lesson with theory and practice. It is more like a master class or simulator. Students watch 9 videos and complete 12 practical tasks where they learn about “scenarios, mistakes, metrics”.<br /><br />
+		The 3 hours of theory are split into 20‑minute blocks. Learn whenever it is convenient for you — progress is saved. It is clear that 3 hours at once is hard to get through. The practice should be done on a desktop, as it uses spreadsheets. And it is also preferable to watch the videos there.</p>
+	</div>
+<!--
+	<div class="textcontent">
+		<ul>
+			<li>
+				Блок 1: Зачем когортный анализ.
+			</li>
+			<li>
+				Блок 2. Как строятся когорты на примере.
+			</li>
+			<li>
+				Блок 3. Основание когорты.
+			</li>
+			<li>
+				Блок 4. Левонаправленная когортная таблица и правонаправленная.
+			</li>
+			<li>
+				Блок 5. Какие метрики являются когортными?
+			</li>
+			<li>
+				Блок 6. Методы когортного анализа: вертикальный, горизонтальный, диагональный.
+			</li>
+			<li>
+				Блок 7. Визуализация на графиках.
+			</li>
+			<li>
+				Блок 8. Когорты с длинным циклом продаж.
+			</li>
+			<li>
+				Блок 9. Как собрать из сырых данных pivot table.
+			</li>
+		</ul>
+	</div>
+-->
+	<div class="textcontent">
+		<ul>
+			<li> Block 1: Why cohort analysis is needed.</li>
+			<li> Block 2: How cohorts are built, with an example.</li>
+			<li> Block 3: The cohort’s basis.</li>
+			<li> Block 4: Left‑aligned and right‑aligned cohort tables.</li>
+			<li> Block 5: Which metrics are cohort metrics?</li>
+			<li> Block 6: Cohort analysis methods: vertical, horizontal, diagonal.</li>
+			<li> Block 7: Visualization on charts.</li>
+			<li> Block 8: Cohorts with a long sales cycle.</li>
+			<li> Block 9: How to build a pivot table from raw data.</li>
+		</ul>
+	</div>
+	<!--
+	<div class="textcontent">
+		<p>
+			<span class="bold-text">Блок 1: Зачем когортный анализ</span><br />
+			Что такое когортный анализ<br />
+			Зачем нужен когортный анализ: jtbd сценарий 1, сценарий 2... сценарий N
+			Практика.
+		</p>
+	</div>
+	<div class="textcontent">
+		<p>
+			<span class="bold-text">Блок 2. Как строятся когорты на примере</span><br />
+			Customer Retention<br />
+			Практика
+		</p>
+	</div>
+	<div class="textcontent">
+		<p>
+			<span class="bold-text">Блок 3. Основание когорты</span><br />
+			Что выбрать основанием когорты<br />
+			Тест
+		</p>
+	</div>
+	<div class="textcontent">
+		<p>
+			<span class="bold-text">Блок 4. Левонаправленная когортная таблица и правонаправленная</span><br />
+			Отличия когортных представлений и сценарии использования<br />
+			Тест
+		</p>
+	</div>
+	<div class="textcontent">
+		<p>
+			<span class="bold-text">Блок 5. Какие метрики являются когортными?</span><br />
+			теория<br />
+			практика
+		</p>
+	</div>
+	<div class="textcontent">
+		<p>
+			<span class="bold-text">Блок 6. Методы когортного анализа: вертикальный, горизонтальный, диагональный.</span><br />
+			теория<br />
+			практика
+		</p>
+	</div>
+	<div class="textcontent">
+		<p>
+			<span class="bold-text">Блок 7. Визуализация на графиках</span><br />
+			теория<br />
+			практика
+		</p>
+	</div>
+	<div class="textcontent">
+		<p>
+			<span class="bold-text">Блок 8. Когорты с длинным циклом продаж</span><br />
+			теория<br />
+			практика
+		</p>
+	</div>
+	<div class="textcontent">
+		<p>
+			<span class="bold-text">Блок 9. Как собрать из сырых данных pivot table</span><br />
+			теория<br />
+			практика
+		</p>
+	</div>
+	-->
+
+	<div class="imgcontent">
+		<img src="taskexample.png" alt="Description of the image" />
+		<p> In this practical assignment, students learn how to group raw data into a cohort table. </p>
+	</div>
+	<div class="textcontent">
+		<h2>What you will get with the lesson:</h2>
+		<p> 
+			- Google Sheets templates (we practice in Airtable, but everything is the same).<br />
+			- Instructions for filling them in<br />
+			- Requirements for analysts for setting things up in Power BI<br />
+			- Templates for presenting results to management<br />
+			- Action plans. </p>
+	</div>
+
+	<!--
+
+	<div class="imgcontent">
+		<img src="taskexample.png" alt="Description of the image" />
+		<p>
+			В этом практическом задании студенты учатся сырые данные группировать в когортную таблицу.
+		</p>
+	</div>
+	<div class="textcontent">
+		<h2>Что получите вместе с уроком:</h2>
+		<p>
+			Шаблоны google sheets. (Хотя тренируемся в эйртэйбл, но все одинаковое).<br />
+			Инструкции к заполнению<br />
+			ТЗ для аналитиков для прокидывания в PowerBI<br />
+			Шаблоны как презентовать руководству результаты<br />
+			Экшн планы.
+		</p>
+	</div>
+
+-->
+
+	<div class="textcontent">
+		<h2>Action plan</h2>
+		<p>
+			The main thing you will get after the lesson is action plans for working with Retention and for working with Acquisition.<br />
+			<br /><br />
+			The action plan for Retention includes a plan for Net Revenue Retention, Customer Retention, User Retention, cohort segmentation, and Power BI instructions.<br /><br />
+			The action plan for Acquisition includes C1, channels, long sales cycle, Power BI instructions, and the sales funnel.
+		</p>
+	</div>
+
+
+	<div class="author">
+		<h2>About the author</h2>
+		<img src="author.png" alt="Description of the image" />
+		<p class="quote">
+			<span>“</span>When I started working as Head of Product in iGaming, the first thing I did was build a cohort analysis of retention. Within a week, we found three critical churn points and increased retention by 23%. Cohorts are a tool that works every day.<span>”</span>
+		</p>
+		<p>
+			<b>My experience:</b><br />
+			✓ 9 years in Product Management<br />
+			✓ Specialization: Growth, Retention, data‑driven decision making<br />
+			✓ Industries: SaaS, MarTech, iGaming<br />
+			✓ Cohort analysis is the foundation of all product decisions.
+		</p>
+		<p>
+			I created this lesson so that in 6 hours you can learn to build cohorts that show where your product is losing users — and what to do about it.
+			<br />
+			Alex Chekavy | <a href="https://www.linkedin.com/in/chekavy/">LinkedIn</a>
+		</p>
+		
+	</div>
+
+
+	
+	<!--
+
+	<div class="textcontent">
+		<h2>Экшн план</h2>
+		<p>
+			Главное, что вы получите послу урока – экшн планы по работе с Retention и по работе с Acquisition.<br />
+			<br /><br />
+			Экшн план по работе с Retention включает в себя план для Net Revenue Retention, Cutomer Retention, User Retention, Cohort segmentation, Power BI instruction.<br /><br />
+			Экшн план по работе с Acquisition включает в себя C1, Channels, Long sales cycle, PowerBI instuctions, sales funnel.
+		</p>
+	</div>
+
+
+	<div class="author">
+		<h2>Об авторе</h2>
+		<img src="author.png" alt="Description of the image" />
+		<p class="quote">
+			<span>«</span>Когда я начал работать Head of Product в iGaming, первое, что я сделал — построил когортный анализ retention. За неделю мы нашли три критические точки оттока и увеличили удержание на 23%. Когорты — это инструмент, который работает каждый день.<span>»</span>
+		</p>
+		<p>
+			<b>Мой опыт:</b><br />
+			✓ 9 лет в Product Management<br />
+			✓ Специализация: Growth, Retention, Data-driven decision making<br />
+			✓ Индустрии: SaaS, MarTech, iGaming<br />
+			✓ Когортный анализ — основа всех продуктовых решений.
+		</p>
+		<p>
+			Я создал этот урок, чтобы вы могли за 6 часов научиться строить когорты, которые показывают, где ваш продукт теряет пользователей — и что делать.
+		</p>
+		<p>
+			LinkedIn
+			email (copy email button)
+		</p>
+	</div>
+
+	-->
+
+
+	<div class="reviews">
+		<h2>Recommendations</h2>
+		<div class="review_container">
+			<div class="reviewer">
+				<img src="nastya.png" alt="reviewer photo" />
+				<p class="reviewer-name">
+					<span>Anastasia Sorokina</span> / <a href="https://www.linkedin.com/in/s-anastasia/">linkedin</a><br />
+					Marketing Manager
+				</p>
+			</div>
+
+			<div class="review">
+				<p>
+					When I went into this cohort analysis lesson, my hands were literally shaking. The commercial director had told me point‑blank: “Our current CAC is a disaster. If nothing changes, in a couple of months we’ll have to part ways.” I had already dug through all my channel reports, built pretty dashboards, but I still had no real understanding of where exactly we were burning money. During Alexey’s lesson, for the first time it became genuinely clear how to break the audience into cohorts so that the picture stops being chaos and turns into a story where you can see what happens to people after the first touchpoint.
+				</p>
+				<p>
+					What I really liked is that it wasn’t some boring academic breakdown. Alexey speaks like a normal person, without “analytics snobbery” and endless formulas. He shows everything with examples: here are cohorts by month of registration, here by month of payment, here’s how they behave across channels, and here is the real leak — not where people usually try to look for it. At some point I literally felt relieved: the problem wasn’t that I’m a “bad marketer”, but that I’d been looking at the data from a weird angle. In his explanation, cohort analysis stopped being a scary buzzword from books and turned into a working tool I could open the next morning and apply directly to my numbers.
+				</p>
+				<p>
+					After the lesson I just sat down and rebuilt my reports: split users into cohorts by first payment and source, checked where people start dropping off massively, and suddenly a lot of things made sense. We found channels that had a “nice” CAC, but after a couple of months almost none of those customers stayed — and that was exactly what I hadn’t seen before. I went back to the commercial director not with excuses, but with a clear picture and concrete suggestions on what to cut and what to scale. Honestly, the only downside is that sometimes you have to pause the video and rewind - there’s a lot of material — but this is one of those rare cases when you feel you’re not just learning for the sake of it, you’re actually saving your marketing (and your job in the company).
+				</p>
+			</div>
+
+			<!--	
+			<div class="review">
+				<p>
+					Когда я шла на этот урок по когортному анализу, у меня, честно, тряслись руки. Коммерческий директор прямо сказал: «Текущий CAC — полная ерунда. Если так и останется, через пару месяцев будем прощаться». Я уже перелопатила все свои отчёты по каналам, строила красивые дашборды, но понимания, где именно мы сливаем деньги, не было вообще. На уроке у Алексея впервые стало по‑настоящему понятно, как разложить аудиторию на когорты так, чтобы картинка перестала быть хаосом и превратилась в историю, в которой видно, что с людьми происходит после первой точки контакта.
+				</p>
+				<p>
+					Мне понравилось, что это не был занудный академический разбор. Алексей говорит по‑человечески, без «аналитического снобизма» и бесконечных формул. Он показывает на примерах: вот когорты по месяцу регистрации, вот по месяцу оплаты, вот так они ведут себя по каналам и вот здесь — настоящая дыра, а не там, где её обычно ищут. В какой‑то момент я буквально ощутила облегчение: оказывается, проблема не в том, что я «плохой маркетолог», а в том, что я смотрела на данные под странным углом. Когортный анализ в его объяснении перестал быть страшным словом из книжек и превратился в рабочий инструмент, который можно открыть завтра утром и применить к своим цифрам.
+				</p>
+				<p>
+					После урока я просто села и пересобрала свои отчёты: разбила пользователей на когорты по первой оплате и источнику, посмотрела, где люди начинают массово отваливаться, и многое сразу стало логичным. Нашлись каналы, которые давали «красивый» CAC, но через пару месяцев клиенты из них почти не оставались — именно этого я раньше не видела. Я пришла к коммерческому директору не с отговорками, а с понятной картинкой и предложениями, что резать, а что масштабировать. Если честно, из минусов могу отметить только то, что местами приходится ставить видео на паузу и возвращаться — материала много, но это тот редкий случай, когда ты ощущаешь, что проводишь время не ради галочки, а реально спасая свой маркетинг (и своё место в компании).				
+				</p>
+			</div>	
+			-->
+		</div>
+		
+		<div class="review_container">
+			<div class="reviewer">
+				<img src="nick.png" alt="reviewer photo" />
+				<p class="reviewer-name">
+					<span>Nick Gorpinevici</span> / <a href="https://www.linkedin.com/in/nikolay-gorpinevich/">linkedin</a><br />
+					CPO, P&L owner
+				</p>
+			</div>
+
+<div class="review">
+				<p class="main-idea">
+					<span>«</span>Ran pricing models over and over, couldn’t get to the right number. Looked at segments, looked at cohorts – Boom!<span>»</span>
+				</p>
+				<p>
+					What for. I own the P&L and pricing, and my task was simple on paper: find a price level where both revenue and margin grow without a spike in churn. In practice, I kept running into an “average hospital temperature”: one LTV, one CAC, one set of plans that were supposed to fit everyone but never gave a clear picture. 
+				</p>
+				<p>
+					How I use it. After the cohort analysis lesson, I rebuilt the whole approach: first I segment customers by product use cases, acquisition channel, and initial plan, and only then I calculate unit economics inside each cohort. Now a price test is not one big experiment on the whole base, but a series of targeted hypotheses for specific clusters. This drastically reduces the cost of mistakes and speeds up decision cycles.  
+				</p>
+				<p>
+					Did it pay off. Yes, and fairly quickly. In some cohorts we raised prices by 10–15% with almost no impact on churn; in others we made the entry softer and won on customer lifetime. Most importantly, the gap disappeared between “the model looks great” and a P&L that behaves unpredictably: now it’s clear which segments actually benefit from price changes and which are better left alone.
+				</p>
+				<p>
+					Pros and cons. The upside is that the cohort approach gives a transparent link between pricing decisions and real customer behavior over time, and it’s easier to talk to finance and sales when you show dynamics for specific groups. Another plus is that the tool scales well: you set up the slices once and then just plug in new pricing hypotheses. The downside is the entry barrier: until you flip your thinking from averages to cohorts, it feels like unnecessary complexity — but after the first successful iteration, you really don’t want to go back.
+				</p>
+
+			</div>
+
+<!--
+			<div class="review">
+				<p class="main-idea">
+					<span>«</span>Считал ценообразование, никак не удавалось вывести нужное значение. Посмотрел на сегменты, посмотрел на когорты – бинго!<span>»</span>
+				</p>
+				<p>
+					Для чего. Я отвечаю за P&L и ценообразование, и моя задача была простая на бумаге: найти такой уровень цен, при котором растёт и выручка, и маржа, без взрывного оттока. На практике я упирался в «среднюю температуру по больнице»: один LTV, один CAC, один набор тарифов, которые будто бы должны подходить всем, но не давали нужной картины.  
+				</p>
+				<p>
+					Как использую. После урока по когортному анализу я перестроил подход: сначала сегментирую клиентов по продуктовым сценариям, каналам и первому тарифу, а уже потом считаю экономику внутри каждой когорты. Теперь тест цены — это не один эксперимент на всей базе, а ряд точечных гипотез по конкретным кластерам. Это сильно снижает стоимость ошибки и ускоряет цикл принятия решений.  
+				</p>
+				<p>
+					Оправдалось ли. Да, и довольно быстро. В некоторых когортах мы подняли цену на 10–15%, почти не тронув отток, в других наоборот смягчили вход и выиграли в длительности жизни клиента. Главное — исчезла ситуация, когда «по модели всё красиво», а в реальности P&L ведёт себя непредсказуемо: теперь видно, каким сегментам действительно выгодно менять прайс, а каким лучше не мешать.  
+				</p>
+				<p>
+					Плюсы и минусы. Плюс — когортный подход даёт прозрачную связь между ценовыми решениями и реальным поведением людей во времени; легче разговаривать и с финансами, и с продажами, показывая им динамику по конкретным группам. Плюс ещё и в том, что инструмент масштабируется: один раз настроил срезы и дальше только подставляешь новые гипотезы по цене. Минус — входной порог выше, чем у «простых» отчётов: пока не перещёлкнешь мышление с усреднённых показателей на когорты, кажется, что всё это лишняя сложность, но после первой удачной итерации назад возвращаться уже не хочется.
+				</p>
+			</div>
+			-->
+		</div>
+		<div class="review_container">
+			<div class="reviewer">
+				<img src="ilya.png" alt="reviewer photo" />
+				<p class="reviewer-name">
+					<span>Ilia Lukiankin</span> / <a href="https://www.linkedin.com/in/ilya-lukyankin/">linkedin</a><br />
+					Senior Product Manager
+				</p>
+			</div>
+
+			<div class="review">
+				<p>
+					Honestly, I signed up for this mostly to tick a box. I’m a Senior PM in big tech, surrounded by dashboards, my own analyst, retention squads - felt like I’d seen it all. But at some point it got embarrassing to admit: we’d been shipping “retention features” for six months, and I still couldn’t say clearly *who* was dropping off and *why*. After going through Alexey’s cohort breakdown, it became uncomfortably obvious that we’d been staring at an average retention curve and making decisions based on a “median user” who doesn’t actually exist.
+				</p>
+				<p>
+					Since then, I talk to the data in a completely different way: not “retention went down”, but “this cohort, with this entry scenario, starts falling apart in week three after this specific change”. It’s much easier for the team to prioritize because we see which hypotheses actually move cohorts and which ones just add noise to the overall chart. I won’t pretend everything is perfect now, but that feeling of banging my head against the wall is gone — at least we finally know *which* part of the wall to hit.
+				</p>
+			</div>
+
+			<!--
+			<div class="review">
+				<p>
+					Честно, я шёл на это обучение скорее «для галочки». Senior PM в бигтехе, вокруг куча дашбордов, свой аналитик, ретеншн‑сквады — казалось, что я уже всё это видел. Но в какой‑то момент стало стыдно признать: мы полгода крутили фичи вокруг ретеншна, а чётко ответить, у кого именно он падает и почему, я не мог. После разбора когорт у Алексея стало неприятно понятно, что мы всё это время смотрели на усреднённый retention curve и делали выводы по «среднему пользователю», которого в продукте не существует.
+				</p>
+				<p>
+					С тех пор я разговариваю с данными совсем по‑другому: не «ретеншн просел», а «эта когорта, с таким-то входным сценарием, после такой-то фичи начинает сыпаться на 3‑й неделе». Команде стало проще приоритизировать, потому что мы видим, какие гипотезы реально двигают когорты, а какие просто добавляют шум в общий график. Не могу сказать, что теперь у нас всё идеально, но ощущение бессмысленного битья головой о стену точно ушло — хотя бы понятно, *в какой* участок стены надо долбить.
+				</p>
+			</div>
+			-->
+		</div>
+		<div class="review_container">
+			<div class="reviewer">
+				<img src="vadzim.png" alt="reviewer photo" />
+				<p class="reviewer-name">
+					<span>Vadzim Ananieu</span> / <a href="https://www.linkedin.com/in/vadim-ananyeu-8703905a/">linkedin</a><br />
+					VC chief
+				</p>
+			</div>
+			
+
+			<div class="review">
+				<p class="main-idea">
+
+
+					<span>“</span>Reviewed financial models in an accelerator. God, why do so few people know about cohorts?<span>”</span>
+				</p>
+				<p>
+					I ran a venture fund, and I’m honestly blown away by the financial models founders send over. In 90% of cases it’s a pretty spreadsheet with “we’ll grow X times in 3 years,” built on faith‑based assumptions. No cohorts, no attempt to understand how the audience will change over time, just generic MRR curves and the immortal “we’ll bring churn down to 2%.” In the end it’s not a model, it’s a slide deck of hopes.  
+				</p>
+				<p>
+					If someone sends me a financial model without cohorts, I send it back to be redone. If a founder can’t show how users from different channels and product scenarios behave by cohort, how retention works, and what *actually* drives revenue, that’s a red flag for me already at pre‑seed/seed, let alone Series A. A cohort‑based approach is not a luxury for later stages, it’s a must‑have for anyone asking for serious capital: it forces you to think in a driver‑based way instead of drawing pretty lines and hoping “it’ll somehow work out.”
+				</p>
+
+<!--
+
+				<p class="main-idea">
+					<span>«</span>Смотрел финмодели в акселераторе. Господи, почему так мало людей знают про когорты?<span>»</span>
+				</p>
+				<p>
+					Я руководил венчурным фондом и меня уже откровенно подрывает от финмоделей, которые присылают фаундеры. В 90% случаев это красивая табличка с «мы вырастем в X раз за 3 года», построенная на faith‑based допущениях. Никаких когорт, никакой попытки разобраться, как будет меняться аудитория во времени, только общие кривые MRR и неубиваемый «мы снизим churn до 2%». В итоге это не модель, а презентация надежд.  
+				</p>
+				<p>
+					Если мне присылают финмодель без когорт – отправляю переделывать. Если фаундер не может показать, как у него по когортам ведут себя пользователи разных каналов и продуктовых сценариев, как устроен retention и из чего *фактически* складывается выручка, для меня это красный флаг уже на пре‑сид/сид стадии, не говоря про раунд А. Когортный подход — это не роскошь поздних стадий, а must‑have для тех, кто претендует на серьёзный капитал: он заставляет думать driver‑based, а не рисовать красивые линии «потом как‑нибудь сложится».
+				</p>
+-->
+
+	
+				<!--	
+				<div class="review_screens">
+					<img src="vadzimreview1.png" alt="Description of the image" />
+					
+					<img src="vadzimreview2.png" alt="Description of the image" />
+					
+				</div>
+				-->
+			</div>
+		</div>
+	</div>
+
+	<!--
+
+	<div class="textcontent">
+		<h2>Экшн план</h2>
+		<p>
+			Это главное, что вы получите после урока.<br />
+			Экшн план по работе с Retention<br />
+			Экшн план по работе с Acquisition<br /><br />
+			Экшн план по работе с Retention включает в себя план для NRR, Revenue Retention, Cutomer Retention, User Retention, Cohort segmentation, data analysts instruction, Power BI instruction.<br /><br />
+			Экшн план по работе с Acquisition включает в себя C1, Channels, Long sales cycle, PowerBI instuctions, sales funnel.
+		</p>
+	</div>
+
+	-->
+<!--	
+Цена
++ обоснование: что получишь вместе
+-->
+	<div class="textcontent waitlist">
+		<p>
+			<a href="#">Join waitlist</a>
+		</p>
+	</div>
+
+</body>
+</html>
+
+
