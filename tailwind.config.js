@@ -11,6 +11,7 @@ module.exports = {
           accent: "var(--accent)",
           quote: "var(--chart-4)",
           border: "var(--ring)",
+          tableBorder: "var(--table-border)",
         },
       },
       fontFamily: {

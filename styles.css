@@ -861,6 +861,10 @@ iframe,
   border-color: var(--ring);
 }
 
+.border-page-tableBorder {
+  border-color: var(--table-border);
+}
+
 .bg-page-bg {
   background-color: var(--background);
 }
@@ -1006,6 +1010,7 @@ iframe,
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
   --ring: #a8a29e;
+  --table-border: #d9d9d9;
   --sidebar: #fafaf9;
   --sidebar-foreground: #0a0a0a;
   --sidebar-border: #e7e5e4;
@@ -1115,8 +1120,8 @@ iframe,
   border-width: 1px;
 }
 
-.\[\&_td\]\:border-page-border td {
-  border-color: var(--ring);
+.\[\&_td\]\:border-page-tableBorder td {
+  border-color: var(--table-border);
 }
 
 .\[\&_td\]\:px-2 td {
@@ -1141,8 +1146,8 @@ iframe,
   border-width: 1px;
 }
 
-.\[\&_th\]\:border-page-border th {
-  border-color: var(--ring);
+.\[\&_th\]\:border-page-tableBorder th {
+  border-color: var(--table-border);
 }
 
 .\[\&_th\]\:px-2 th {
