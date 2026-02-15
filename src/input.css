@@ -6,6 +6,12 @@
   html {
     @apply text-page-text bg-page-bg font-sans;
   }
+  main {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   /* Fix preflight for linter: standard appearance + no vertical-align on block */
   button,
   input:where([type="button"]),

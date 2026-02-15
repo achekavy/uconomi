@@ -19,6 +19,8 @@ module.exports = {
       maxWidth: {
         content: "600px",
         wide: "800px",
+        table: "1200px",
+        mobile: "360px",
       },
     },
   },
