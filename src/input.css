@@ -72,6 +72,7 @@
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    box-sizing: border-box;
   }
   /* Fix preflight for linter: standard appearance + no vertical-align on block */
   button,
@@ -91,6 +92,21 @@
 }
 
 @layer components {
+  /* Центрирование таблиц: один блок на таблицу, не зависит от flex */
+  .table-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    overflow-x: auto;
+    box-sizing: border-box;
+  }
+  .table-wrapper--wide {
+    max-width: 1000px;
+  }
+  .table-wrapper--mobile {
+    max-width: 360px;
+  }
+
   .metric-tag.tag-selected,
   .industry-tag.tag-selected {
     border-color: var(--accent);
