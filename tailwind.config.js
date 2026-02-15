@@ -4,13 +4,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        /* Light-theme palette (same in light and dark OS theme) — inspired by mikkelmalmberg.com */
+        /* Light theme from palette (CSS vars in input.css: display-p3 + lab) */
         page: {
-          text: "#1c1917",
-          bg: "#fafaf9",
-          accent: "#2563eb",
-          quote: "#b45309",
-          border: "#e7e5e4",
+          text: "var(--card-foreground)",
+          bg: "var(--background)",
+          accent: "var(--accent)",
+          quote: "var(--chart-4)",
+          border: "var(--ring)",
         },
       },
       fontFamily: {

@@ -555,11 +555,9 @@ video {
 }
 
 html {
-  --tw-bg-opacity: 1;
-  background-color: rgb(250 250 249 / var(--tw-bg-opacity, 1));
   font-family: 'DM Sans', sans-serif;
-  --tw-text-opacity: 1;
-  color: rgb(28 25 23 / var(--tw-text-opacity, 1));
+  color: var(--card-foreground);
+  background-color: var(--background);
 }
 
 main {
@@ -628,9 +626,8 @@ iframe,
 
 .metric-tag.tag-selected,
   .industry-tag.tag-selected {
-  --tw-border-opacity: 1;
-  border-color: rgb(37 99 235 / var(--tw-border-opacity, 1));
-  background-color: rgb(37 99 235 / 0.2);
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
 }
 
 .visible {
@@ -861,13 +858,11 @@ iframe,
 }
 
 .border-page-border {
-  --tw-border-opacity: 1;
-  border-color: rgb(231 229 228 / var(--tw-border-opacity, 1));
+  border-color: var(--ring);
 }
 
 .bg-page-bg {
-  --tw-bg-opacity: 1;
-  background-color: rgb(250 250 249 / var(--tw-bg-opacity, 1));
+  background-color: var(--background);
 }
 
 .object-cover {
@@ -963,18 +958,15 @@ iframe,
 }
 
 .text-page-accent {
-  --tw-text-opacity: 1;
-  color: rgb(37 99 235 / var(--tw-text-opacity, 1));
+  color: var(--accent);
 }
 
 .text-page-quote {
-  --tw-text-opacity: 1;
-  color: rgb(180 83 9 / var(--tw-text-opacity, 1));
+  color: var(--chart-4);
 }
 
 .text-page-text {
-  --tw-text-opacity: 1;
-  color: rgb(28 25 23 / var(--tw-text-opacity, 1));
+  color: var(--card-foreground);
 }
 
 .filter {
@@ -997,8 +989,63 @@ iframe,
   transition-duration: 200ms;
 }
 
-.hover\:border-page-accent\/50:hover {
-  border-color: rgb(37 99 235 / 0.5);
+/* Light theme palette: fallback (hex) for all browsers */
+
+:root {
+  --background: #f0edec;
+  --muted: #e7e0de;
+  --accent: #2400e8;
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --popover: #ffffff;
+  --popover-foreground: #0a0a0a;
+  --secondary: #f6f6f6;
+  --secondary-foreground: #1a1a1a;
+  --muted-foreground: #78716c;
+  --accent-foreground: #1a1a1a;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --ring: #a8a29e;
+  --sidebar: #fafaf9;
+  --sidebar-foreground: #0a0a0a;
+  --sidebar-border: #e7e5e4;
+}
+
+@supports (color: color(display-p3 0 0 0)) {
+  :root {
+    --background: color(display-p3 0.941176 0.929412 0.92549);
+    --muted: color(display-p3 0.905882 0.878431 0.870588);
+    --accent: color(display-p3 0.14 0 0.91);
+  }
+}
+
+@supports (color: lab(0% 0 0)) {
+  :root {
+    --card: lab(100% 0 0);
+    --card-foreground: lab(2.75381% 0 0);
+    --popover: lab(100% 0 0);
+    --popover-foreground: lab(2.75381% 0 0);
+    --secondary: lab(96.52% -0.0000298023 0.0000119209);
+    --secondary-foreground: lab(7.78201% -0.0000149012 0);
+    --muted-foreground: lab(48.496% 0 0);
+    --accent-foreground: lab(7.78201% -0.0000149012 0);
+    --destructive: lab(48.4493% 77.4328 61.5452);
+    --destructive-foreground: lab(100% 0 0);
+    --ring: lab(66.128% -0.0000298023 0.0000119209);
+    --chart-1: lab(57.1026% 64.2584 89.8886);
+    --chart-2: lab(55.0223% -41.0774 -3.90277);
+    --chart-3: lab(30.372% -13.1853 -18.7887);
+    --chart-4: lab(80.1641% 16.6016 99.2089);
+    --chart-5: lab(72.7183% 31.8672 97.9407);
+    --sidebar: lab(98.26% 0 0);
+    --sidebar-foreground: lab(2.75381% 0 0);
+    --sidebar-primary: lab(7.78201% -0.0000149012 0);
+    --sidebar-primary-foreground: lab(98.26% 0 0);
+    --sidebar-accent: lab(96.52% -0.0000298023 0.0000119209);
+    --sidebar-accent-foreground: lab(7.78201% -0.0000149012 0);
+    --sidebar-border: lab(90.952% 0 0.0000119209);
+    --sidebar-ring: lab(66.128% -0.0000298023 0.0000119209);
+  }
 }
 
 .hover\:underline:hover {
@@ -1069,8 +1116,7 @@ iframe,
 }
 
 .\[\&_td\]\:border-page-border td {
-  --tw-border-opacity: 1;
-  border-color: rgb(231 229 228 / var(--tw-border-opacity, 1));
+  border-color: var(--ring);
 }
 
 .\[\&_td\]\:px-2 td {
@@ -1096,8 +1142,7 @@ iframe,
 }
 
 .\[\&_th\]\:border-page-border th {
-  --tw-border-opacity: 1;
-  border-color: rgb(231 229 228 / var(--tw-border-opacity, 1));
+  border-color: var(--ring);
 }
 
 .\[\&_th\]\:px-2 th {
