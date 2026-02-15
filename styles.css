@@ -630,6 +630,12 @@ iframe,
   background: color-mix(in srgb, var(--accent) 20%, transparent);
 }
 
+.metric-tag:hover:not(.tag-selected),
+  .industry-tag:hover:not(.tag-selected) {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 18%, var(--background));
+}
+
 .visible {
   visibility: visible;
 }
@@ -977,8 +983,8 @@ iframe,
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.transition-colors {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+.transition-all {
+  transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }

@@ -96,4 +96,10 @@
     border-color: var(--accent);
     background: color-mix(in srgb, var(--accent) 20%, transparent);
   }
+
+  .metric-tag:hover:not(.tag-selected),
+  .industry-tag:hover:not(.tag-selected) {
+    border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 18%, var(--background));
+  }
 }
