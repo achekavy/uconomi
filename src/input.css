@@ -6,4 +6,19 @@
   html {
     @apply text-page-text bg-page-bg font-sans;
   }
+  /* Fix preflight for linter: standard appearance + no vertical-align on block */
+  button,
+  input:where([type="button"]),
+  input:where([type="reset"]),
+  input:where([type="submit"]) {
+    appearance: button;
+  }
+  [type="search"] {
+    appearance: textfield;
+  }
+  iframe,
+  embed,
+  object {
+    vertical-align: unset;
+  }
 }
