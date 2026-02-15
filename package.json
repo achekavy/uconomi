@@ -2,7 +2,7 @@
   "name": "uconomi",
   "private": true,
   "scripts": {
-    "build:css": "tailwindcss -i src/input.css -o styles.css --minify",
+    "build:css": "tailwindcss -i src/input.css -o styles.css",
     "watch:css": "tailwindcss -i src/input.css -o styles.css --watch",
     "start": "npx serve . -p 3000"
   },
