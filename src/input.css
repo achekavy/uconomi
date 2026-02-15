@@ -28,3 +28,10 @@
     vertical-align: unset;
   }
 }
+
+@layer components {
+  .metric-tag.tag-selected,
+  .industry-tag.tag-selected {
+    @apply border-page-accent bg-page-accent/20;
+  }
+}
