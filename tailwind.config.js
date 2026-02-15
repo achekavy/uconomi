@@ -13,7 +13,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ["SF Mono", "Inter", "system-ui", "sans-serif"],
+        sans: ["'DM Sans'", "sans-serif"],
+        mono: ["'JetBrains Mono'", "'Roboto Mono'", "monospace"],
       },
       maxWidth: {
         content: "600px",

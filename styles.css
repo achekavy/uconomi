@@ -154,7 +154,7 @@ html,
   -o-tab-size: 4;
      tab-size: 4;
   /* 3 */
-  font-family: SF Mono, Inter, system-ui, sans-serif;
+  font-family: 'DM Sans', sans-serif;
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
@@ -243,7 +243,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: 'JetBrains Mono', 'Roboto Mono', monospace;
   /* 1 */
   font-feature-settings: normal;
   /* 2 */
@@ -348,7 +348,6 @@ input:where([type='button']),
 input:where([type='reset']),
 input:where([type='submit']) {
   -webkit-appearance: button;
-  appearance: button;
   /* 1 */
   background-color: transparent;
   /* 2 */
@@ -396,7 +395,6 @@ Correct the cursor style of increment and decrement buttons in Safari.
 
 [type='search'] {
   -webkit-appearance: textfield;
-  appearance: textfield;
   /* 1 */
   outline-offset: -2px;
   /* 2 */
@@ -536,6 +534,8 @@ embed,
 object {
   display: block;
   /* 1 */
+  vertical-align: middle;
+  /* 2 */
 }
 
 /*
@@ -557,7 +557,7 @@ video {
 html {
   --tw-bg-opacity: 1;
   background-color: rgb(40 37 35 / var(--tw-bg-opacity, 1));
-  font-family: SF Mono, Inter, system-ui, sans-serif;
+  font-family: 'DM Sans', sans-serif;
   --tw-text-opacity: 1;
   color: rgb(213 203 201 / var(--tw-text-opacity, 1));
 }
@@ -687,10 +687,6 @@ html {
 
 .h-36 {
   height: 9rem;
-}
-
-.h-\[280px\] {
-  height: 280px;
 }
 
 .h-auto {
@@ -823,6 +819,10 @@ html {
   text-align: center;
 }
 
+.font-mono {
+  font-family: 'JetBrains Mono', 'Roboto Mono', monospace;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -863,6 +863,24 @@ html {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-200 {
+  transition-duration: 200ms;
+}
+
+.hover\:underline:hover {
+  text-decoration-line: underline;
+}
+
+.hover\:opacity-90:hover {
+  opacity: 0.9;
+}
+
 @media (min-width: 768px) {
   .md\:mb-4 {
     margin-bottom: 1rem;
@@ -900,6 +918,11 @@ html {
   .md\:py-5 {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
+  }
+
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .md\:text-base {
