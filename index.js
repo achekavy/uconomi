@@ -36,6 +36,59 @@ window.startBanner = function () {
 })();
 
 (function () {
+  var STORAGE_KEY = "presentation-unit-votes";
+  var tags = document.querySelectorAll(".presentation-unit__tag");
+
+  function loadState() {
+    try {
+      var raw = sessionStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function saveState(state) {
+    try {
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch (e) {}
+  }
+
+  function applyState() {
+    var state = loadState();
+    tags.forEach(function (btn) {
+      var id = btn.getAttribute("data-id");
+      if (!id) return;
+      var saved = state[id];
+      if (saved) {
+        btn.setAttribute("data-count", saved.count);
+        btn.textContent = btn.getAttribute("data-label") + " " + saved.count;
+        if (saved.voted) btn.classList.add("presentation-unit__tag--voted");
+      }
+    });
+  }
+
+  applyState();
+
+  tags.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      if (btn.classList.contains("presentation-unit__tag--voted")) return;
+      var id = btn.getAttribute("data-id");
+      var label = btn.getAttribute("data-label");
+      var count = parseInt(btn.getAttribute("data-count"), 10) || 0;
+      count += 1;
+      btn.setAttribute("data-count", count);
+      btn.textContent = label + " " + count;
+      btn.classList.add("presentation-unit__tag--voted");
+
+      var state = loadState();
+      state[id] = { count: count, voted: true };
+      saveState(state);
+    });
+  });
+})();
+
+(function () {
   var emailUser = "achekavy";
   var emailDomain = "gmail.com";
   var email = emailUser + "\x40" + emailDomain;
