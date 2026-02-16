@@ -726,7 +726,8 @@ iframe,
   border-radius: 0;
   border: none;
   padding: 1rem 1.25rem;
-  min-height: 100px;
+  aspect-ratio: 1;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -739,10 +740,12 @@ iframe,
   color: var(--ink);
   margin: 0;
   flex: 1;
+  min-height: 0;
 }
 
 .presentation-unit__reactions {
-  margin-top: 0.75rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
