@@ -678,6 +678,103 @@ iframe,
   visibility: visible;
 }
 
+/* Presentation unit: скруглённые карточки и теги, теги в ряд; мобилка 2 в ряд, десктоп 4 в ряд */
+
+.presentation-unit {
+  --sticker-bg: #ffffe0;
+  --tag-bg: #f5e6a4;
+  --ink: #222222;
+}
+
+.presentation-unit__heading {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .presentation-unit__heading {
+    font-size: 2.25rem;
+  }
+}
+
+.presentation-unit__intro {
+  font-size: 1rem;
+  line-height: 1.625;
+  color: var(--ink);
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.presentation-unit__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .presentation-unit__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem 1.25rem;
+  }
+}
+
+.presentation-unit__sticker {
+  background-color: var(--sticker-bg);
+  border-radius: 0;
+  border: none;
+  padding: 1rem 1.25rem;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.presentation-unit__sticker p {
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.45;
+  color: var(--ink);
+  margin: 0;
+  flex: 1;
+}
+
+.presentation-unit__reactions {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.presentation-unit__tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  font-family: inherit;
+  color: var(--ink);
+  background-color: var(--tag-bg);
+  border: none;
+  border-radius: 9999px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.presentation-unit__tag:hover:not(.presentation-unit__tag--voted) {
+  background-color: #e8dc80;
+}
+
+.presentation-unit__tag--voted {
+  background-color: #ffd700;
+  cursor: default;
+  pointer-events: none;
+}
+
 .visible {
   visibility: visible;
 }
@@ -730,6 +827,10 @@ iframe,
 
 .mb-5 {
   margin-bottom: 1.25rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 
 .mb-8 {
