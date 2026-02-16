@@ -118,4 +118,26 @@
     border-color: var(--accent);
     background: color-mix(in srgb, var(--accent) 18%, var(--background));
   }
+
+  .footer-email-tooltip {
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translate(-50%, -6px);
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    line-height: 1.2;
+    color: var(--card-foreground);
+    background: var(--muted);
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    pointer-events: none;
+  }
+  .footer-email-tooltip.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
 }
