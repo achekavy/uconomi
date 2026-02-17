@@ -148,15 +148,16 @@
     --ink: #222222;
   }
   .presentation-unit__heading {
-    font-size: 1.875rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--accent);
+    margin-top: 2rem;
     margin-bottom: 0.75rem;
     line-height: 1.2;
   }
   @media (min-width: 768px) {
     .presentation-unit__heading {
-      font-size: 2.25rem;
+      font-size: 1.875rem;
     }
   }
   .presentation-unit__intro {
