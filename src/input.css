@@ -147,19 +147,6 @@
     --tag-bg: #f5e6a4;
     --ink: #222222;
   }
-  .presentation-unit__heading {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--accent);
-    margin-top: 2rem;
-    margin-bottom: 0.75rem;
-    line-height: 1.2;
-  }
-  @media (min-width: 768px) {
-    .presentation-unit__heading {
-      font-size: 1.875rem;
-    }
-  }
   .presentation-unit__intro {
     font-size: 1rem;
     line-height: 1.625;
