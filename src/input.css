@@ -67,6 +67,16 @@
     color: var(--card-foreground);
     background-color: var(--background);
   }
+  /* Основной текст параграфов: крупнее для доступности (плохое зрение) */
+  main p {
+    font-size: 1.0625rem; /* 17px на мобильном */
+    line-height: 1.625;
+  }
+  @media (min-width: 768px) {
+    main p {
+      font-size: 1.125rem; /* 18px на десктопе */
+    }
+  }
   main {
     width: 100%;
     max-width: 1200px;
@@ -148,11 +158,16 @@
     --ink: #222222;
   }
   .presentation-unit__intro {
-    font-size: 1rem;
+    font-size: 1.0625rem; /* 17px мобильный */
     line-height: 1.625;
     color: var(--ink);
     margin-top: 0.5rem;
     margin-bottom: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .presentation-unit__intro {
+      font-size: 1.125rem; /* 18px десктоп */
+    }
   }
   .presentation-unit__grid {
     display: grid;
@@ -176,13 +191,18 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }
   .presentation-unit__sticker p {
-    font-size: 0.875rem;
+    font-size: 1rem; /* 16px мобильный — было 14px */
     font-weight: 300;
     line-height: 1.45;
     color: var(--ink);
     margin: 0;
     flex: 1 1 auto;
     min-height: min-content;
+  }
+  @media (min-width: 768px) {
+    .presentation-unit__sticker p {
+      font-size: 1.0625rem; /* 17px десктоп */
+    }
   }
   .presentation-unit__reactions {
     margin-top: auto;

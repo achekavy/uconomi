@@ -560,6 +560,21 @@ html {
   background-color: var(--background);
 }
 
+/* Основной текст параграфов: крупнее для доступности (плохое зрение) */
+
+main p {
+  font-size: 1.0625rem;
+  /* 17px на мобильном */
+  line-height: 1.625;
+}
+
+@media (min-width: 768px) {
+  main p {
+    font-size: 1.125rem;
+    /* 18px на десктопе */
+  }
+}
+
 main {
   width: 100%;
   max-width: 1200px;
@@ -687,11 +702,19 @@ iframe,
 }
 
 .presentation-unit__intro {
-  font-size: 1rem;
+  font-size: 1.0625rem;
+  /* 17px мобильный */
   line-height: 1.625;
   color: var(--ink);
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .presentation-unit__intro {
+    font-size: 1.125rem;
+    /* 18px десктоп */
+  }
 }
 
 .presentation-unit__grid {
@@ -719,7 +742,8 @@ iframe,
 }
 
 .presentation-unit__sticker p {
-  font-size: 0.875rem;
+  font-size: 1rem;
+  /* 16px мобильный — было 14px */
   font-weight: 300;
   line-height: 1.45;
   color: var(--ink);
@@ -727,6 +751,13 @@ iframe,
   flex: 1 1 auto;
   min-height: -moz-min-content;
   min-height: min-content;
+}
+
+@media (min-width: 768px) {
+  .presentation-unit__sticker p {
+    font-size: 1.0625rem;
+    /* 17px десктоп */
+  }
 }
 
 .presentation-unit__reactions {
