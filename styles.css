@@ -983,6 +983,10 @@ iframe,
   max-width: 600px;
 }
 
+.max-w-stickers {
+  max-width: 1000px;
+}
+
 .max-w-wide {
   max-width: 800px;
 }

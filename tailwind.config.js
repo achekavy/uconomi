@@ -21,6 +21,7 @@ module.exports = {
       maxWidth: {
         content: "600px",
         wide: "800px",
+        stickers: "1000px",
         table: "1200px",
         mobile: "360px",
       },
