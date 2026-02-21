@@ -750,18 +750,24 @@ iframe,
   }
 }
 
-/* Стикер: квадрат или выше (мин. высота ≥ ширины), при большом контенте растёт по высоте */
+/* Стикер: на десктопе — по контенту; на мобилке — мин. высота не меньше ширины */
 
 .presentation-unit__sticker {
-  container-type: inline-size;
   background-color: var(--sticker-bg);
   border-radius: 0;
   border: none;
   padding: 1rem 1.25rem;
-  min-height: max(10em, 100cqw);
+  min-height: 10em;
   display: flex;
   flex-direction: column;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 768px) {
+  .presentation-unit__sticker {
+    min-height: 0;
+    /* десктоп: высота только по контенту */
+  }
 }
 
 .presentation-unit__sticker p {
@@ -822,6 +828,12 @@ iframe,
 }
 
 @media (max-width: 767px) {
+  .presentation-unit__sticker {
+    container-type: inline-size;
+    min-height: max(10em, 100cqw);
+    /* мобилка: квадрат или выше */
+  }
+
   .presentation-unit__reactions {
     flex-wrap: nowrap;
     gap: 0.35rem;
