@@ -264,8 +264,7 @@
 
   @media (max-width: 767px) {
     .presentation-unit__sticker {
-      container-type: inline-size;
-      min-height: max(10em, 100cqw); /* мобилка: квадрат или выше */
+      min-height: 0; /* по контенту, как на десктопе */
     }
     .presentation-unit__reactions {
       flex-wrap: nowrap;
