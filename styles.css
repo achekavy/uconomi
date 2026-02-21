@@ -751,12 +751,13 @@ iframe,
 }
 
 .presentation-unit__sticker {
+  container-type: inline-size;
   background-color: var(--sticker-bg);
   border-radius: 0;
   border: none;
   padding: 1rem 1.25rem;
-  min-height: 10em;
-  aspect-ratio: 1 / 1;
+  min-height: max(10em, 100cqw);
+  /* не меньше ширины, но может расти по контенту */
   display: flex;
   flex-direction: column;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -764,7 +765,7 @@ iframe,
 
 .presentation-unit__sticker p {
   font-size: 1rem;
-  /* 16px мобильный — было 14px */
+  /* 16px мобильный */
   font-weight: 300;
   line-height: 1.45;
   color: var(--ink);
@@ -772,6 +773,7 @@ iframe,
   flex: 1 1 auto;
   min-height: -moz-min-content;
   min-height: min-content;
+  /* весь текст виден, стикер растёт по высоте */
 }
 
 @media (min-width: 768px) {
