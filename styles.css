@@ -750,6 +750,8 @@ iframe,
   }
 }
 
+/* Стикер: квадрат или выше (мин. высота ≥ ширины), при большом контенте растёт по высоте */
+
 .presentation-unit__sticker {
   container-type: inline-size;
   background-color: var(--sticker-bg);
@@ -757,7 +759,6 @@ iframe,
   border: none;
   padding: 1rem 1.25rem;
   min-height: max(10em, 100cqw);
-  /* не меньше ширины, но может расти по контенту */
   display: flex;
   flex-direction: column;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
