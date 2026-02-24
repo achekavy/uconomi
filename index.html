@@ -178,6 +178,8 @@
 		<h2 class="mt-8 mb-3 text-2xl md:text-3xl">You <span class="strikethrough-diagonal">should</span> absolutely must use cohorts. No&nbsp;more blind blended reports.</h2>
 		<p class="mt-2 mb-4 leading-relaxed">
 			Blended metrics are blind. Let me show why. Let's look at the example of customer retention. The table shows the number of customers and the retention rate for each month. It's a simple table, but it can be used to understand the retention rate for each month.
+			<br />
+			This is a standard report that the marketing or product team provides to the CEO or investors. It shows how many users have remained in the product each month.
 		</p>
 	</div>
 
@@ -265,7 +267,101 @@
 			</tbody>
 		</table>
 	</div>
-
+<button id="show-table-btn" type="button" class="metric-tag rounded-full px-4 py-2 text-sm border border-page-border bg-page-bg text-page-text cursor-pointer transition-all duration-200 mt-4 mb-4">
+  let's check what's wrong with this report
+</button>
+<div id="copied-table-wrapper" class="table-wrapper table-wrapper--wide mb-8" style="display: none;">
+  <table class="w-full border-collapse text-page-text text-sm font-mono [&_th]:border [&_td]:border [&_th]:border-page-tableBorder [&_td]:border-page-tableBorder [&_th]:px-2 [&_td]:px-2 [&_th]:py-2 [&_td]:py-2 [&_td]:text-right [&_th]:text-right [&_th:first-child]:text-left [&_td:first-child]:text-left">
+    <caption class="text-left text-page-accent font-semibold mb-2">SAAS; customer retention</caption>
+    <thead>
+      <tr class="border-b border-page-tableBorder">
+        <th>2026</th>
+        <th>Jan</th>
+        <th>Feb</th>
+        <th>Mar</th>
+        <th>Apr</th>
+        <th>May</th>
+        <th>Jun</th>
+        <th>Jul</th>
+        <th>Aug</th>
+        <th>Sep</th>
+        <th>Oct</th>
+        <th>Nov</th>
+        <th>Dec</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="border-b border-page-tableBorder">
+        <td class="text-left font-medium">Total</td>
+        <td>28,381</td>
+        <td>29,068</td>
+        <td>29,686</td>
+        <td>30,204</td>
+        <td>31,144</td>
+        <td>31,834</td>
+        <td>32,463</td>
+        <td>33,035</td>
+        <td>33,035</td>
+        <td>33,035</td>
+        <td>33,035</td>
+        <td>33,035</td>
+      </tr>
+      <tr class="border-b border-page-tableBorder">
+        <td class="text-left">New</td>
+        <td>8,000</td>
+        <td>8,000</td>
+        <td>8,000</td>
+        <td>8,000</td>
+        <td>8,000</td>
+        <td>8,000</td>
+        <td>8,000</td>
+        <td>8,000</td>
+        <td>8,000</td>
+        <td>8,000</td>
+        <td>8,000</td>
+        <td>8,000</td>
+      </tr>
+      <tr class="border-b border-page-tableBorder">
+        <td class="text-left">Old</td>
+        <td>20,381</td>
+        <td>21,068</td>
+        <td>21,686</td>
+        <td>22,204</td>
+        <td>22,702</td>
+        <td>23,144</td>
+        <td>23,555</td>
+        <td>23,910</td>
+        <td>24,233</td>
+        <td>24,533</td>
+        <td>24,797</td>
+        <td>25,035</td>
+      </tr>
+      <tr>
+        <td class="text-left">Retention</td>
+        <td>73.70%</td>
+        <td>74.24%</td>
+        <td>74.60%</td>
+        <td>74.80%</td>
+        <td>75.16%</td>
+        <td>75.38%</td>
+        <td>75.63%</td>
+        <td>75.77%</td>
+        <td>75.94%</td>
+        <td>76.11%</td>
+        <td>76.22%</td>
+        <td>76.33%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<script>
+  const btn = document.getElementById('show-table-btn');
+  const table = document.getElementById('copied-table-wrapper');
+  btn.addEventListener('click', function() {
+    table.style.display = (table.style.display === 'none') ? 'block' : 'none';
+    btn.classList.toggle('tag-selected');
+  });
+</script>
 	<div class="table-wrapper table-wrapper--mobile mb-8">
 			<table class="w-full border-collapse text-page-text text-sm font-mono [&_th]:border [&_td]:border [&_th]:border-page-tableBorder [&_td]:border-page-tableBorder [&_th]:px-2 [&_td]:px-2 [&_th]:py-2 [&_td]:py-2 [&_td]:text-right [&_th]:text-right [&_th:first-child]:text-left [&_td:first-child]:text-left">
 			<caption class="text-left text-page-accent font-semibold mb-2">SAAS; customer retention (transposed)</caption>
