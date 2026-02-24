@@ -279,7 +279,13 @@
 		<span class="main-button-callout__label">don't skip the main button on this page</span>
 	</div>
 </div>
-<div id="copied-table-wrapper" class="table-wrapper table-wrapper--wide mb-8" style="display: none;">
+<div id="blended-table-newtraf" style="display: none;">
+	<div class="max-w-content mx-auto mb-6">
+		<p class="mt-2 mb-4 leading-relaxed">
+			Your boss in January 2025 asks you to forecast revenue for the end of 2025. He gives you a budget to acquire new customers starting in June. You calculated that you can attract not 8,000 new customers per month, but 24,000. Using the table above you built a forecast for the number of payments. Each payment is $9. So in December 2025 you would earn 88,163×$9 = $793,467. Is that correct?
+		</p>
+	</div>
+	<div class="table-wrapper table-wrapper--wide mb-6">
   <table class="w-full border-collapse text-page-text text-sm font-mono [&_th]:border [&_td]:border [&_th]:border-page-tableBorder [&_td]:border-page-tableBorder [&_th]:px-2 [&_td]:px-2 [&_th]:py-2 [&_td]:py-2 [&_td]:text-right [&_th]:text-right [&_th:first-child]:text-left [&_td:first-child]:text-left">
     <caption class="text-left text-page-accent font-semibold mb-2">SAAS; customer retention</caption>
     <thead>
@@ -362,12 +368,17 @@
       </tr>
     </tbody>
   </table>
+	</div>
+	<div class="max-w-content mx-auto mb-8 flex flex-wrap gap-3">
+		<button type="button" class="metric-tag rounded-full px-4 py-2 text-sm border border-page-border bg-page-bg text-page-text cursor-pointer transition-all duration-200">All correct.</button>
+		<button type="button" class="metric-tag rounded-full px-4 py-2 text-sm border border-page-border bg-page-bg text-page-text cursor-pointer transition-all duration-200">Since you're asking — let's look further.</button>
+	</div>
 </div>
 <script>
   const btn = document.getElementById('show-cohort-value-btn');
-  const table = document.getElementById('copied-table-wrapper');
+  const block = document.getElementById('blended-table-newtraf');
   btn.addEventListener('click', function() {
-    table.style.display = (table.style.display === 'none') ? 'block' : 'none';
+    block.style.display = (block.style.display === 'none') ? 'block' : 'none';
     btn.classList.toggle('tag-selected');
   });
 </script>
