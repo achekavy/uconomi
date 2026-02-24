@@ -147,6 +147,36 @@
     background: color-mix(in srgb, var(--accent) 18%, var(--background));
   }
 
+  /* Блок «главная кнопка страницы»: надпись рукописью + изогнутая стрелка к кнопке */
+  .main-button-callout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1rem;
+    margin: 1.5rem 0;
+    padding: 1.25rem 1.5rem;
+    background: color-mix(in srgb, var(--accent) 8%, var(--background));
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(36, 0, 232, 0.12);
+  }
+  .main-button-callout__label {
+    font-family: "Caveat", cursive;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--card-foreground);
+    white-space: nowrap;
+  }
+  .main-button-callout__arrow {
+    width: 80px;
+    height: 40px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .main-button-callout__btn {
+    flex-shrink: 0;
+  }
+
   .footer-email-tooltip {
     position: absolute;
     left: 50%;
