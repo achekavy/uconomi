@@ -690,12 +690,12 @@ iframe,
   background: color-mix(in srgb, var(--accent) 18%, var(--background));
 }
 
-/* Блок «главная кнопка страницы»: кнопка сверху, под ней справа — стрелка (к кнопке) + рукописный текст */
+/* Блок «главная кнопка страницы»: кнопка по центру, текст слегка заходит справа; рукописная стрелка к кнопке */
 
 .main-button-callout {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.5rem 0;
   margin: 1.5rem 0;
 }
@@ -707,15 +707,18 @@ iframe,
 .main-button-callout__hint {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.35rem;
   align-self: flex-end;
+  margin-right: 15%;
 }
 
 .main-button-callout__arrow {
-  width: 80px;
-  height: 40px;
-  color: var(--muted-foreground);
+  width: 48px;
+  height: 60px;
+  color: var(--card-foreground);
   flex-shrink: 0;
+  transform: rotate(-42deg);
+  /* стрелка от текста к кнопке (вверх-влево) */
 }
 
 .main-button-callout__label {
@@ -724,6 +727,22 @@ iframe,
   font-weight: 600;
   color: var(--card-foreground);
   white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .main-button-callout {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+  }
+
+  .main-button-callout__hint {
+    align-self: center;
+    margin-left: -1.5rem;
+    margin-right: 0;
+  }
 }
 
 .footer-email-tooltip {
