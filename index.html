@@ -268,14 +268,16 @@
 		</table>
 	</div>
 <div class="main-button-callout">
-	<span class="main-button-callout__label">don't skip the main button on this page</span>
-	<svg class="main-button-callout__arrow" viewBox="0 0 120 50" aria-hidden="true">
-		<path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M8 25 C35 8 65 42 95 25" />
-		<path fill="currentColor" d="M85 20 L95 25 L85 30 Z" />
-	</svg>
 	<button id="show-cohort-value-btn" type="button" class="metric-tag rounded-full px-4 py-2 text-sm border border-page-border bg-page-bg text-page-text cursor-pointer transition-all duration-200 main-button-callout__btn">
 		let's check what's wrong with this report
 	</button>
+	<div class="main-button-callout__hint">
+		<svg class="main-button-callout__arrow" viewBox="0 0 120 50" aria-hidden="true">
+			<path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M95 25 C65 8 35 42 8 25" />
+			<path fill="currentColor" d="M18 20 L8 25 L18 30 Z" />
+		</svg>
+		<span class="main-button-callout__label">don't skip the main button on this page</span>
+	</div>
 </div>
 <div id="copied-table-wrapper" class="table-wrapper table-wrapper--wide mb-8" style="display: none;">
   <table class="w-full border-collapse text-page-text text-sm font-mono [&_th]:border [&_td]:border [&_th]:border-page-tableBorder [&_td]:border-page-tableBorder [&_th]:px-2 [&_td]:px-2 [&_th]:py-2 [&_td]:py-2 [&_td]:text-right [&_th]:text-right [&_th:first-child]:text-left [&_td:first-child]:text-left">
