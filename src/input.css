@@ -135,6 +135,12 @@
     max-width: 360px;
   }
 
+  /* Подсветка Total/Nov и Total/Dec только после клика «Since you're asking — let's look further.» */
+  #blended-table-newtraf.followup-visible .cell-highlight-on-followup {
+    background: color-mix(in srgb, var(--accent) 18%, var(--background));
+    font-weight: 600;
+  }
+
   .metric-tag.tag-selected,
   .industry-tag.tag-selected {
     border-color: var(--accent);

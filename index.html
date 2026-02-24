@@ -318,8 +318,7 @@
         <td>33,035</td>
         <td>33,035</td>
         <td>33,035</td>
-        <td>33,035</td>
-        <td>33,035</td>
+        <td class="cell-highlight-on-followup">33,035</td>
       </tr>
       <tr class="border-b border-page-tableBorder">
         <td class="text-left">New</td>
@@ -371,7 +370,101 @@
 	</div>
 	<div class="max-w-content mx-auto mb-8 flex flex-wrap gap-3">
 		<button type="button" class="metric-tag rounded-full px-4 py-2 text-sm border border-page-border bg-page-bg text-page-text cursor-pointer transition-all duration-200">All correct.</button>
-		<button type="button" class="metric-tag rounded-full px-4 py-2 text-sm border border-page-border bg-page-bg text-page-text cursor-pointer transition-all duration-200">Since you're asking — let's look further.</button>
+		<button type="button" id="show-further-table-btn" class="metric-tag rounded-full px-4 py-2 text-sm border border-page-border bg-page-bg text-page-text cursor-pointer transition-all duration-200">Since you're asking — let's look further.</button>
+	</div>
+	<div id="blended-table-followup" style="display: none;">
+		<div class="table-wrapper table-wrapper--wide mb-6">
+			<table class="w-full border-collapse text-page-text text-sm font-mono [&_th]:border [&_td]:border [&_th]:border-page-tableBorder [&_td]:border-page-tableBorder [&_th]:px-2 [&_td]:px-2 [&_th]:py-2 [&_td]:py-2 [&_td]:text-right [&_th]:text-right [&_th:first-child]:text-left [&_td:first-child]:text-left">
+				<caption class="text-left text-page-accent font-semibold mb-2">SAAS; customer retention</caption>
+				<thead>
+					<tr class="border-b border-page-tableBorder">
+						<th>2026</th>
+						<th>Jan</th>
+						<th>Feb</th>
+						<th>Mar</th>
+						<th>Apr</th>
+						<th>May</th>
+						<th>Jun</th>
+						<th>Jul</th>
+						<th>Aug</th>
+						<th>Sep</th>
+						<th>Oct</th>
+						<th>Nov</th>
+						<th>Dec</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="border-b border-page-tableBorder">
+						<td class="text-left font-medium">Total</td>
+						<td>28,381</td>
+						<td>29,068</td>
+						<td>29,686</td>
+						<td>30,204</td>
+						<td>31,144</td>
+						<td>31,834</td>
+						<td>32,463</td>
+						<td>33,035</td>
+						<td>33,035</td>
+						<td>33,035</td>
+						<td class="cell-highlight-on-followup">33,035</td>
+					</tr>
+					<tr class="border-b border-page-tableBorder">
+						<td class="text-left">New</td>
+						<td>8,000</td>
+						<td>8,000</td>
+						<td>8,000</td>
+						<td>8,000</td>
+						<td>8,000</td>
+						<td>8,000</td>
+						<td>8,000</td>
+						<td>8,000</td>
+						<td>8,000</td>
+						<td>8,000</td>
+						<td>8,000</td>
+						<td>8,000</td>
+					</tr>
+					<tr class="border-b border-page-tableBorder">
+						<td class="text-left">Old</td>
+						<td>20,381</td>
+						<td>21,068</td>
+						<td>21,686</td>
+						<td>22,204</td>
+						<td>22,702</td>
+						<td>23,144</td>
+						<td>23,555</td>
+						<td>23,910</td>
+						<td>24,233</td>
+						<td>24,533</td>
+						<td>24,797</td>
+						<td>25,035</td>
+					</tr>
+					<tr>
+						<td class="text-left">Retention</td>
+						<td>73.70%</td>
+						<td>74.24%</td>
+						<td>74.60%</td>
+						<td>74.80%</td>
+						<td>75.16%</td>
+						<td>75.38%</td>
+						<td>75.63%</td>
+						<td>75.77%</td>
+						<td>75.94%</td>
+						<td>76.11%</td>
+						<td>76.22%</td>
+						<td>76.33%</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<p class="max-w-content mx-auto mt-2 mb-4 leading-relaxed">
+			Do you see the difference in the number of payments? Select the options you think are correct.
+		</p>
+		<div class="max-w-content mx-auto flex flex-col gap-3 mb-8">
+			<button type="button" class="w-full sm:w-auto px-4 py-2 text-sm border border-page-border rounded-lg bg-page-bg text-page-text cursor-pointer transition-all duration-200 hover:border-page-accent text-left">Retention is not at all as shown in the tables.</button>
+			<button type="button" class="w-full sm:w-auto px-4 py-2 text-sm border border-page-border rounded-lg bg-page-bg text-page-text cursor-pointer transition-all duration-200 hover:border-page-accent text-left">Seasonality had an effect.</button>
+			<button type="button" class="w-full sm:w-auto px-4 py-2 text-sm border border-page-border rounded-lg bg-page-bg text-page-text cursor-pointer transition-all duration-200 hover:border-page-accent text-left">There's an error in the bottom table.</button>
+			<button type="button" class="w-full sm:w-auto px-4 py-2 text-sm border border-page-border rounded-lg bg-page-bg text-page-text cursor-pointer transition-all duration-200 hover:border-page-accent text-left">I don't understand what happened.</button>
+		</div>
 	</div>
 </div>
 <script>
@@ -381,6 +474,15 @@
     block.style.display = (block.style.display === 'none') ? 'block' : 'none';
     btn.classList.toggle('tag-selected');
   });
+  const furtherBtn = document.getElementById('show-further-table-btn');
+  const followupBlock = document.getElementById('blended-table-followup');
+  if (furtherBtn && followupBlock) {
+    furtherBtn.addEventListener('click', function() {
+      const isHidden = followupBlock.style.display === 'none';
+      followupBlock.style.display = isHidden ? 'block' : 'none';
+      block.classList.toggle('followup-visible', isHidden);
+    });
+  }
 </script>
 	<div class="table-wrapper table-wrapper--mobile mb-8">
 			<table class="w-full border-collapse text-page-text text-sm font-mono [&_th]:border [&_td]:border [&_th]:border-page-tableBorder [&_td]:border-page-tableBorder [&_th]:px-2 [&_td]:px-2 [&_th]:py-2 [&_td]:py-2 [&_td]:text-right [&_th]:text-right [&_th:first-child]:text-left [&_td:first-child]:text-left">

@@ -678,6 +678,13 @@ iframe,
   max-width: 360px;
 }
 
+/* Подсветка Total/Nov и Total/Dec только после клика «Since you're asking — let's look further.» */
+
+#blended-table-newtraf.followup-visible .cell-highlight-on-followup {
+  background: color-mix(in srgb, var(--accent) 18%, var(--background));
+  font-weight: 600;
+}
+
 .metric-tag.tag-selected,
   .industry-tag.tag-selected {
   border-color: var(--accent);
@@ -1134,6 +1141,10 @@ iframe,
   gap: 0.5rem;
 }
 
+.gap-3 {
+  gap: 0.75rem;
+}
+
 .gap-4 {
   gap: 1rem;
 }
@@ -1159,6 +1170,10 @@ iframe,
 
 .rounded-full {
   border-radius: 9999px;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
 }
 
 .border {
@@ -1385,6 +1400,10 @@ iframe,
   }
 }
 
+.hover\:border-page-accent:hover {
+  border-color: var(--accent);
+}
+
 .hover\:underline:hover {
   text-decoration-line: underline;
 }
@@ -1395,6 +1414,12 @@ iframe,
 
 .hover\:opacity-90:hover {
   opacity: 0.9;
+}
+
+@media (min-width: 640px) {
+  .sm\:w-auto {
+    width: auto;
+  }
 }
 
 @media (min-width: 768px) {
