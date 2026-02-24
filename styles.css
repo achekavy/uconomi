@@ -690,7 +690,7 @@ iframe,
   background: color-mix(in srgb, var(--accent) 18%, var(--background));
 }
 
-/* Блок «главная кнопка страницы»: кнопка сверху по центру, ниже — стрелка и рукописный текст; стрелка от текста к кнопке, не заходит на кнопку */
+/* Блок «главная кнопка страницы»: кнопка по центру, рукописный текст ниже и правее (как красный прямоугольник); стрелка привязана к тексту и идёт к кнопке */
 
 .main-button-callout {
   display: flex;
@@ -701,14 +701,40 @@ iframe,
 }
 
 .main-button-callout__btn {
+  --btn-main-bg: #93c47d;
+  --btn-main-bg-hover: #82b36b;
+  --btn-main-bg-active: #72a05a;
+  --btn-main-text: #1a2e0f;
   flex-shrink: 0;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  background: var(--btn-main-bg);
+  color: var(--btn-main-text);
+  border: 2px solid var(--btn-main-bg);
+}
+
+.main-button-callout__btn:hover {
+  background: var(--btn-main-bg-hover);
+  border-color: var(--btn-main-bg-hover);
+}
+
+.main-button-callout__btn:active {
+  background: var(--btn-main-bg-active);
+  border-color: var(--btn-main-bg-active);
+}
+
+.main-button-callout__btn.tag-selected {
+  background: var(--btn-main-bg-hover);
+  border-color: var(--btn-main-bg-hover);
 }
 
 .main-button-callout__hint {
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  align-self: center;
+  align-self: flex-end;
+  /* ниже и правее кнопки */
 }
 
 .main-button-callout__arrow {
@@ -716,8 +742,8 @@ iframe,
   height: 52px;
   color: var(--card-foreground);
   flex-shrink: 0;
-  transform: rotate(0deg);
-  /* стрелка снизу вверх — от текста к кнопке */
+  transform: rotate(-28deg);
+  /* от текста (справа внизу) к кнопке (влево вверх) */
 }
 
 .main-button-callout__label {
@@ -730,8 +756,7 @@ iframe,
 
 @media (max-width: 767px) {
   .main-button-callout__hint {
-    align-self: flex-end;
-    margin-right: 10%;
+    margin-right: 5%;
   }
 }
 
