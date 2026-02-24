@@ -155,7 +155,8 @@
     gap: 1.25rem 0;
     margin: 1.5rem 0;
   }
-  .main-button-callout__btn {
+  .main-button-callout__btn,
+  .main-button-callout__btn.metric-tag {
     --btn-main-bg: #93c47d;
     --btn-main-bg-hover: #82b36b;
     --btn-main-bg-active: #72a05a;
@@ -168,15 +169,16 @@
     color: var(--btn-main-text);
     border: 2px solid var(--btn-main-bg);
   }
-  .main-button-callout__btn:hover {
+  .main-button-callout__btn.metric-tag:hover,
+  .main-button-callout__btn.metric-tag:hover:not(.tag-selected) {
     background: var(--btn-main-bg-hover);
     border-color: var(--btn-main-bg-hover);
   }
-  .main-button-callout__btn:active {
+  .main-button-callout__btn.metric-tag:active {
     background: var(--btn-main-bg-active);
     border-color: var(--btn-main-bg-active);
   }
-  .main-button-callout__btn.tag-selected {
+  .main-button-callout__btn.metric-tag.tag-selected {
     background: var(--btn-main-bg-hover);
     border-color: var(--btn-main-bg-hover);
   }
