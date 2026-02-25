@@ -462,7 +462,10 @@
 			Do you see the difference in the number of payments? Select the options you think are correct.
 		</p>
 		<div class="max-w-content mx-auto flex flex-col gap-3 mb-8">
-			<button type="button" class="w-full sm:w-auto px-4 py-2 text-sm border border-page-border rounded-lg bg-page-bg text-page-text cursor-pointer transition-all duration-200 hover:border-page-accent text-left">Retention is not at all as shown in the tables.</button>
+			<button type="button" id="retention-not-as-shown-btn" class="w-full sm:w-auto px-4 py-2 text-sm border border-page-border rounded-lg bg-page-bg text-page-text cursor-pointer transition-all duration-200 hover:border-page-accent text-left">Retention is not at all as shown in the tables.</button>
+			<p id="retention-not-as-shown-text" class="max-w-content mt-1 mb-0 py-2 pl-4 border-l-2 border-page-accent text-page-text leading-relaxed hidden" aria-live="polite">
+				In fact, the Retention Rate has not changed. Each new cohort behaves exactly the same as the previous one. The behavior of the customers we acquired in February is no different from the behavior of those we acquired in August, September, or any other month this year.
+			</p>
 			<button type="button" class="w-full sm:w-auto px-4 py-2 text-sm border border-page-border rounded-lg bg-page-bg text-page-text cursor-pointer transition-all duration-200 hover:border-page-accent text-left">Seasonality had an effect.</button>
 			<button type="button" class="w-full sm:w-auto px-4 py-2 text-sm border border-page-border rounded-lg bg-page-bg text-page-text cursor-pointer transition-all duration-200 hover:border-page-accent text-left">There's an error in the bottom table.</button>
 			<button type="button" class="w-full sm:w-auto px-4 py-2 text-sm border border-page-border rounded-lg bg-page-bg text-page-text cursor-pointer transition-all duration-200 hover:border-page-accent text-left">I don't understand what happened.</button>
@@ -483,6 +486,14 @@
       const isHidden = followupBlock.style.display === 'none';
       followupBlock.style.display = isHidden ? 'block' : 'none';
       block.classList.toggle('followup-visible', isHidden);
+    });
+  }
+  const retentionNotAsShownBtn = document.getElementById('retention-not-as-shown-btn');
+  const retentionNotAsShownText = document.getElementById('retention-not-as-shown-text');
+  if (retentionNotAsShownBtn && retentionNotAsShownText) {
+    retentionNotAsShownBtn.addEventListener('click', function() {
+      retentionNotAsShownText.classList.toggle('hidden');
+      retentionNotAsShownBtn.classList.toggle('tag-selected');
     });
   }
 </script>
