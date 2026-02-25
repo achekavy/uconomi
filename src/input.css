@@ -345,41 +345,68 @@
   }
 }
 
-/* ----- Radar chart animation (Blended vs Cohorted) ----- */
+/* ----- Radar chart: оригинальный скриншот + анимации ----- */
 .radar-chart-animated {
-  background-color: #1a1a1a;
   border-radius: 8px;
   overflow: hidden;
 }
 
-.radar-chart-animated__svg {
+.radar-chart-animated__inner {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.radar-chart-animated__img {
   display: block;
   width: 100%;
+  max-width: 100%;
   height: auto;
-  max-width: 600px;
-  margin: 0 auto;
+  vertical-align: middle;
 }
 
-/* Области появляются в разное время; заголовок подсвечивается */
-.radar-chart-animated__area--blended {
-  animation: radar-area-in 0.6s ease-out 0.5s forwards;
+/* Смена Blended view → Cohorted view (зациклено) */
+.radar-chart-animated__view-switch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
-.radar-chart-animated__area--cohorted {
-  animation: radar-area-in 0.6s ease-out 2.2s forwards;
+.radar-chart-animated__highlight--blended {
+  opacity: 0;
+  animation: radar-show-blended 6s ease-in-out infinite;
 }
 
-.radar-chart-animated__header--blended {
-  opacity: 0.4;
-  animation: radar-header-highlight 0.6s ease-out 0.5s forwards;
+.radar-chart-animated__highlight--cohorted {
+  opacity: 0;
+  animation: radar-show-cohorted 6s ease-in-out infinite;
 }
 
-.radar-chart-animated__header--cohorted {
-  opacity: 0.4;
-  animation: radar-header-highlight 0.6s ease-out 2.2s forwards;
+@keyframes radar-show-blended {
+  0%, 45% { opacity: 1; }
+  50%, 95% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
-/* Розовые точки медленно моргают */
+@keyframes radar-show-cohorted {
+  0%, 45% { opacity: 0; }
+  50%, 95% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Розовые точки поверх картинки, медленно моргают */
+.radar-chart-animated__dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
 .radar-chart-animated__dot {
   animation: radar-dot-blink 2.5s ease-in-out infinite;
 }
@@ -392,31 +419,7 @@
 .radar-chart-animated__dot:nth-child(6) { animation-delay: 1s; }
 .radar-chart-animated__dot:nth-child(7) { animation-delay: 1.2s; }
 
-@keyframes radar-area-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes radar-header-highlight {
-  from {
-    opacity: 0.4;
-    filter: none;
-  }
-  to {
-    opacity: 1;
-    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
-  }
-}
-
 @keyframes radar-dot-blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.35;
-  }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
 }
