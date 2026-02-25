@@ -1,1 +1,4 @@
 node_modules/
+
+# Local task tracking — keep out of version control
+todo.md
