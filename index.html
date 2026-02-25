@@ -156,7 +156,7 @@
 					<p>Early-stage startup — no budget to hire an analyst.</p>
 					<div class="presentation-unit__reactions">
 						<button type="button" class="presentation-unit__tag" data-id="pu-8-0" data-label="➕" data-count="165" aria-label="Reaction: 165">➕ 165</button>
-						<button type="button" class="presentation-unit__tag" data-id="pu-8-1" data-label="😢" data-count="102" aria-label="Reaction: 102">😢 102</button>
+						<button type="button" class="presentation-unit__tag" data-id="pu-8-1" data-label="📉" data-count="102" aria-label="Reaction: 102">📉 102</button>
 					</div>
 				</div>
 				<div class="presentation-unit__sticker">
@@ -700,7 +700,79 @@
 	</div>
 
 	<div class="max-w-wide mx-auto mb-8">
-		<img src="images/BlendedVSCohortRadar.png" alt="Blended metrics are blind" class="w-full max-w-wide h-auto" />
+		<div class="radar-chart-animated" role="img" aria-label="Blended view and Cohorted view on a radar chart: Trends and Hot topic areas appear with highlighted labels; pink dots indicate data points.">
+			<svg class="radar-chart-animated__svg" viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg">
+				<defs>
+					<filter id="radar-glow" x="-50%" y="-50%" width="200%" height="200%">
+						<feGaussianBlur stdDeviation="2" result="blur"/>
+						<feMerge>
+							<feMergeNode in="blur"/>
+							<feMergeNode in="SourceGraphic"/>
+						</feMerge>
+					</filter>
+					<linearGradient id="segment-blended" x1="0%" y1="0%" x2="100%" y2="100%">
+						<stop offset="0%" stop-color="#3d3d3d"/>
+						<stop offset="100%" stop-color="#2a2a2a"/>
+					</linearGradient>
+					<linearGradient id="segment-cohorted" x1="0%" y1="0%" x2="100%" y2="100%">
+						<stop offset="0%" stop-color="#404040"/>
+						<stop offset="100%" stop-color="#2d2d2d"/>
+					</linearGradient>
+				</defs>
+				<!-- Background -->
+				<rect width="500" height="420" fill="#1a1a1a"/>
+				<!-- Concentric circles -->
+				<g stroke="#333" stroke-width="0.5" fill="none">
+					<circle cx="250" cy="200" r="28"/>
+					<circle cx="250" cy="200" r="55"/>
+					<circle cx="250" cy="200" r="82"/>
+					<circle cx="250" cy="200" r="109"/>
+					<circle cx="250" cy="200" r="136"/>
+					<circle cx="250" cy="200" r="163"/>
+				</g>
+				<!-- Base wedge segments -->
+				<g fill="#252525" stroke="#333" stroke-width="0.5">
+					<path d="M250,200 L250,28 A170,170 0 0,1 338.2,94.8 Z"/>
+					<path d="M250,200 L338.2,94.8 A170,170 0 0,1 287.4,34.6 Z"/>
+					<path d="M250,200 L287.4,34.6 A170,170 0 0,1 212.6,34.6 Z"/>
+					<path d="M250,200 L212.6,34.6 A170,170 0 0,1 161.8,94.8 Z"/>
+					<path d="M250,200 L161.8,94.8 A170,170 0 0,1 161.8,305.2 Z"/>
+					<path d="M250,200 L161.8,305.2 A170,170 0 0,1 212.6,365.4 Z"/>
+					<path d="M250,200 L212.6,365.4 A170,170 0 0,1 338.2,305.2 Z"/>
+					<path d="M250,200 L338.2,305.2 A170,170 0 0,1 250,28 Z"/>
+				</g>
+				<!-- Blended area (segment bottom-left) – appears first -->
+				<path class="radar-chart-animated__area radar-chart-animated__area--blended" fill="url(#segment-blended)" stroke="#444" stroke-width="1" opacity="0" d="M250,200 L161.8,305.2 A170,170 0 0,1 212.6,365.4 Z"/>
+				<!-- Cohorted area (segment top-right) – appears second -->
+				<path class="radar-chart-animated__area radar-chart-animated__area--cohorted" fill="url(#segment-cohorted)" stroke="#444" stroke-width="1" opacity="0" d="M250,200 L338.2,94.8 A170,170 0 0,1 287.4,34.6 Z"/>
+				<!-- Pill labels on chart -->
+				<g class="radar-chart-animated__labels">
+					<rect x="155" y="318" width="52" height="22" rx="11" fill="#3a3a3a" class="radar-chart-animated__pill"/>
+					<text x="181" y="333" text-anchor="middle" fill="#e0e0e0" font-size="11" font-family="system-ui,sans-serif">Trends</text>
+					<rect x="298" y="58" width="62" height="22" rx="11" fill="#3a3a3a" class="radar-chart-animated__pill"/>
+					<text x="329" y="73" text-anchor="middle" fill="#e0e0e0" font-size="11" font-family="system-ui,sans-serif">Hot topic</text>
+					<rect x="318" y="345" width="68" height="22" rx="11" fill="#3a3a3a" class="radar-chart-animated__pill"/>
+					<text x="352" y="360" text-anchor="middle" fill="#e0e0e0" font-size="11" font-family="system-ui,sans-serif">Peak time</text>
+				</g>
+				<!-- Headers + arrows -->
+				<g class="radar-chart-animated__headers">
+					<text class="radar-chart-animated__header radar-chart-animated__header--blended" x="95" y="185" fill="#fff" font-size="14" font-weight="600" font-family="system-ui,sans-serif">Blended view</text>
+					<path class="radar-chart-animated__arrow" d="M 120 195 Q 160 260 185 305" stroke="#e85d04" stroke-width="2" fill="none" stroke-linecap="round"/>
+					<text class="radar-chart-animated__header radar-chart-animated__header--cohorted" x="305" y="115" fill="#fff" font-size="14" font-weight="600" font-family="system-ui,sans-serif">Cohorted view</text>
+					<path class="radar-chart-animated__arrow" d="M 320 125 Q 300 165 295 95" stroke="#e85d04" stroke-width="2" fill="none" stroke-linecap="round"/>
+				</g>
+				<!-- Pink dots (slow blink) -->
+				<g class="radar-chart-animated__dots">
+					<circle class="radar-chart-animated__dot" cx="185" cy="318" r="5" fill="#ec4899"/>
+					<circle class="radar-chart-animated__dot" cx="295" cy="88" r="5" fill="#ec4899"/>
+					<circle class="radar-chart-animated__dot" cx="220" cy="285" r="5" fill="#ec4899"/>
+					<circle class="radar-chart-animated__dot" cx="255" cy="245" r="5" fill="#ec4899"/>
+					<circle class="radar-chart-animated__dot" cx="285" cy="175" r="5" fill="#ec4899"/>
+					<circle class="radar-chart-animated__dot" cx="320" cy="330" r="5" fill="#ec4899"/>
+					<circle class="radar-chart-animated__dot" cx="355" cy="300" r="5" fill="#ec4899"/>
+				</g>
+			</svg>
+		</div>
 		<p class="mt-2 mb-4 leading-relaxed">
 			Blended metrics are blind. Let me show why
 		</p>
