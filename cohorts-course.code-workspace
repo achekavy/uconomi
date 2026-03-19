@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"markdown-pdf.styles": [],
+		"markdown-pdf.includeDefaultStyles": true
+	}
+}
