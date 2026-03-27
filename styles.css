@@ -928,12 +928,20 @@ iframe,
   visibility: visible;
 }
 
+.collapse {
+  visibility: collapse;
+}
+
 .absolute {
   position: absolute;
 }
 
 .relative {
   position: relative;
+}
+
+.sticky {
+  position: sticky;
 }
 
 .m-0 {
@@ -947,6 +955,10 @@ iframe,
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
 }
 
 .mb-10 {
@@ -979,6 +991,14 @@ iframe,
 
 .mb-8 {
   margin-bottom: 2rem;
+}
+
+.mt-0 {
+  margin-top: 0px;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
 }
 
 .mt-10 {
@@ -1039,6 +1059,10 @@ iframe,
 
 .h-auto {
   height: auto;
+}
+
+.min-h-0 {
+  min-height: 0px;
 }
 
 .min-h-screen {
@@ -1133,6 +1157,10 @@ iframe,
   justify-content: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
 .gap-1 {
   gap: 0.25rem;
 }
@@ -1153,6 +1181,10 @@ iframe,
   gap: 1.25rem;
 }
 
+.gap-6 {
+  gap: 1.5rem;
+}
+
 .gap-x-2 {
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
@@ -1162,6 +1194,10 @@ iframe,
   --tw-space-y-reverse: 0;
   margin-top: calc(0.375rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.375rem * var(--tw-space-y-reverse));
+}
+
+.text-balance {
+  text-wrap: balance;
 }
 
 .rounded {
@@ -1176,6 +1212,10 @@ iframe,
   border-radius: 0.5rem;
 }
 
+.rounded-md {
+  border-radius: 0.375rem;
+}
+
 .border {
   border-width: 1px;
 }
@@ -1188,8 +1228,16 @@ iframe,
   border-bottom-width: 1px;
 }
 
+.border-l-2 {
+  border-left-width: 2px;
+}
+
 .border-t {
   border-top-width: 1px;
+}
+
+.border-page-accent {
+  border-color: var(--accent);
 }
 
 .border-page-border {
@@ -1217,6 +1265,16 @@ iframe,
   padding: 0.25rem;
 }
 
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1227,6 +1285,11 @@ iframe,
   padding-bottom: 0.5rem;
 }
 
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -1234,6 +1297,10 @@ iframe,
 
 .pb-10 {
   padding-bottom: 2.5rem;
+}
+
+.pl-4 {
+  padding-left: 1rem;
 }
 
 .pl-8 {
@@ -1320,8 +1387,18 @@ iframe,
   color: var(--card-foreground);
 }
 
+.opacity-80 {
+  opacity: 0.8;
+}
+
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.transition-\[background-color\] {
+  transition-property: background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .transition-all {
@@ -1333,6 +1410,10 @@ iframe,
 .transition-opacity {
   transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-150 {
   transition-duration: 150ms;
 }
 
@@ -1523,6 +1604,107 @@ iframe,
   }
 }
 
+/* Blended table quiz: contradictory pairs (“vs” layout) */
+
+.blended-quiz-section__title {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--card-foreground);
+  margin: 0 0 0.25rem;
+}
+
+.blended-quiz__btn {
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  min-height: 2.75rem;
+}
+
+.blended-quiz__check {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: 0.1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #3d7a2e;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.blended-quiz__btn--ok {
+  border-color: #93c47d !important;
+  background: color-mix(in srgb, #93c47d 22%, var(--background)) !important;
+}
+
+.blended-quiz__btn--ok .blended-quiz__check {
+  opacity: 1;
+}
+
+.blended-quiz__pairReveal:not(.hidden) {
+  border-left: 2px solid color-mix(in srgb, var(--accent) 75%, transparent);
+  padding-left: 0.75rem;
+}
+
+/* Equal columns, no boxes — only whitespace + typography (grid keeps sides aligned) */
+
+.blended-quiz__vs-grid {
+  display: grid;
+  width: 100%;
+  max-width: 100%;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 0.85rem 1rem;
+  align-items: stretch;
+}
+
+@media (max-width: 639px) {
+  .blended-quiz__vs-grid {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+  }
+
+  .blended-quiz__vs-label {
+    margin: 0.2rem 0;
+    justify-self: center;
+  }
+}
+
+.blended-quiz__vs-label {
+  align-self: center;
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--card-foreground) 42%, transparent);
+  line-height: 1.2;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.blended-quiz__pair--vs-block {
+  padding-bottom: 0.35rem;
+}
+
+/* No outlines: transparent border avoids layout shift when “selected” adds tint */
+
+.blended-quiz__btn--pairclean {
+  border: 1px solid transparent;
+  background: transparent;
+}
+
+.blended-quiz__btn--pairclean:hover:not(.blended-quiz__btn--ok) {
+  background: color-mix(in srgb, var(--muted) 16%, transparent);
+}
+
+.blended-quiz__btn--pairclean.blended-quiz__btn--ok {
+  border-color: transparent !important;
+}
+
 .hover\:border-page-accent:hover {
   border-color: var(--accent);
 }
@@ -1539,9 +1721,33 @@ iframe,
   opacity: 0.9;
 }
 
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus-visible\:ring-2:focus-visible {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.focus-visible\:ring-page-accent:focus-visible {
+  --tw-ring-color: var(--accent);
+}
+
+.focus-visible\:ring-offset-2:focus-visible {
+  --tw-ring-offset-width: 2px;
+}
+
 @media (min-width: 640px) {
   .sm\:w-auto {
     width: auto;
+  }
+
+  .sm\:px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 }
 
@@ -1588,6 +1794,11 @@ iframe,
   .md\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+
+  .md\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   .md\:text-xl {
